@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Qué documentos juntar, cuándo vence cada rendición y qué hacer en cada etapa de tu proyecto de los Fondos de Cultura." />
+    <meta name="theme-color" content="#1F4E79" />
+    <title>Guía de Rendición</title>
+    <base href="/guia-rendicion/" />
+    <link href="_framework/dotnet.59g0s7u2pm.js" rel="preload" as="script" fetchpriority="high" crossorigin="anonymous" integrity="sha256-tzWmCKZ8VwiPwMsq9NIIKVpQfgQa7fZCUkqJBoMZxeo=" />
+    <link rel="stylesheet" href="css/app.css" />
+    <link href="manifest.webmanifest" rel="manifest" />
+    <link rel="apple-touch-icon" sizes="512x512" href="icon-512.png" />
+    <link rel="apple-touch-icon" sizes="192x192" href="icon-192.png" />
+    <script type="importmap">{
+  "imports": {
+    "./_framework/blazor.webassembly.js": "./_framework/blazor.webassembly.w3qd1tpl0e.js",
+    "./_framework/dotnet.js": "./_framework/dotnet.59g0s7u2pm.js",
+    "./_framework/dotnet.native.js": "./_framework/dotnet.native.bjoj0wmylw.js",
+    "./_framework/dotnet.runtime.js": "./_framework/dotnet.runtime.5nc8i5dl74.js"
+  },
+  "scopes": {},
+  "integrity": {
+    "./_framework/blazor.webassembly.js": "sha256-lDXsDYFgm62F+YUvxES7IOTCXYpiHpU3uR45YdC6mq4=",
+    "./_framework/blazor.webassembly.w3qd1tpl0e.js": "sha256-lDXsDYFgm62F+YUvxES7IOTCXYpiHpU3uR45YdC6mq4=",
+    "./_framework/dotnet.59g0s7u2pm.js": "sha256-tzWmCKZ8VwiPwMsq9NIIKVpQfgQa7fZCUkqJBoMZxeo=",
+    "./_framework/dotnet.js": "sha256-tzWmCKZ8VwiPwMsq9NIIKVpQfgQa7fZCUkqJBoMZxeo=",
+    "./_framework/dotnet.native.bjoj0wmylw.js": "sha256-CZ0IVZkLTIvee7n1yVvOitlJWNdj/YjaFgpMgliIM64=",
+    "./_framework/dotnet.native.js": "sha256-CZ0IVZkLTIvee7n1yVvOitlJWNdj/YjaFgpMgliIM64=",
+    "./_framework/dotnet.runtime.5nc8i5dl74.js": "sha256-/3dBg9sj1yLD3h0PDMHnNUXWs/2zWwIMEzom1Xz3Q40=",
+    "./_framework/dotnet.runtime.js": "sha256-/3dBg9sj1yLD3h0PDMHnNUXWs/2zWwIMEzom1Xz3Q40="
+  }
+}</script>
+</head>
+
+<body>
+    <div id="app">
+        <svg class="loading-progress">
+            <circle r="40%" cx="50%" cy="50%" />
+            <circle r="40%" cx="50%" cy="50%" />
+        </svg>
+        <div class="loading-progress-text"></div>
+    </div>
+
+    <div id="blazor-error-ui">
+        Algo falló en la página.
+        <a href="." class="reload">Vuelve a cargarla</a>
+        <span class="dismiss">🗙</span>
+    </div>
+    <script>
+        // Descarga el proyecto como archivo .rendicion, el mismo que abre el programa para Windows.
+        window.guia = {
+            descargar: (nombre, texto) => {
+                const enlace = document.createElement('a');
+                enlace.href = URL.createObjectURL(new Blob([texto], { type: 'application/json' }));
+                enlace.download = nombre;
+                enlace.click();
+                setTimeout(() => URL.revokeObjectURL(enlace.href), 10000);
+            }
+        };
+    </script>
+    <script src="_framework/blazor.webassembly.w3qd1tpl0e.js"></script>
+    <script>navigator.serviceWorker.register('service-worker.js', { updateViaCache: 'none' });</script>
+</body>
+
+</html>
